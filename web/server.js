@@ -6,7 +6,7 @@ const ObjectID = require('mongodb').ObjectID
 
 var db;
 
-MongoClient.connect('mongodb://localhost:27017/test', (err, client) => {
+MongoClient.connect('mongodb://db:27017/test', (err, client) => {
   if (err) return console.log(err)
   db = client.db('test') // whatever your database name is
   app.listen(3000, () => {

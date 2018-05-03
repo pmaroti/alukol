@@ -17,4 +17,4 @@ RUN npm i
 CMD node server.js
 
 # Tell Docker about the port we'll run on.
-EXPOSE 5000
+EXPOSE 3000
