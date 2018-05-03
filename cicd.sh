@@ -3,17 +3,10 @@
 #create react into web public
 cd react_src
 yarn install
-yarn start build
+yarn build
 cd ..
 
-#build docker image
-docker build . -t testapp:latest
+docker-compose build
 
-#stop running container
-docker kill testapp
+docker-compose up -d
 
-#remove stopped container
-docker rm testapp
-
-#run new container
-docker run -p 5005:5000 -d --name testapp testapp:latest
