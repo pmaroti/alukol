@@ -6,7 +6,7 @@ services:
       - ./mongo_data:/data/db
   web:
     build: .
-    command: node server.js
+    command: sh -c './wait-for db:27017 -- node server.js' 
     ports:
       - "3000:3000"
     depends_on:
