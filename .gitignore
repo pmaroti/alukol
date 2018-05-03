@@ -35,14 +35,12 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-<<<<<<< HEAD
 react_src/node_modules
 web/node_modules
 web/public
+mongo_data/
 
 
-=======
->>>>>>> e7930f8ed34dc4f7bf98aba379bd6e43764a18fe
 
 # Typescript v1 declaration files
 typings/
