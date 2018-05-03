@@ -3,7 +3,7 @@
 #create react into web public
 cd react_src
 yarn install
-webpack
+yarn start build
 cd ..
 
 #build docker image

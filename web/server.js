@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient
 const bodyParser= require('body-parser')
 const ObjectID = require('mongodb').ObjectID
 
-var db
+var db;
 
 MongoClient.connect('mongodb://localhost:27017/test', (err, client) => {
   if (err) return console.log(err)
@@ -61,7 +61,7 @@ app.delete('/items/:projectId', function(req, res) {
     console.log("projectId: ",req.params.projectId )
     console.log("item:", req.body);
     //console.log("request:", req);
-    
+
     const itemIdsToDelete = req.body.map((trx) => {
         return (new ObjectID.createFromHexString(trx["_id"]));
     });
@@ -79,7 +79,7 @@ app.delete('/items/:projectId', function(req, res) {
 
 app.get('/projects',(req, res) => {
     db.collection('inventory').aggregate(
-        {"$group": { "_id": { projectnr: "$projectnr", projectname: "$projectname" } } }, 
+        {"$group": { "_id": { projectnr: "$projectnr", projectname: "$projectname" } } },
         function(err, results) {
             if (err) return console.log(err)
             console.log("aaaa")
@@ -111,4 +111,3 @@ app.post('/test',(req, res) => {
 })
 
 console.log("valami");
-
